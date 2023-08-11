@@ -23,7 +23,7 @@ export default async function RootLayout({ children }) {
           </Link>
           {user ? (
             <div className="NavLink">
-              {user.username}#{user.discriminator}
+              {user.username}
             </div>
           ) : (
             <Link className="NavLink" href="/api/auth">
