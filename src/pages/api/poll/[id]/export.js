@@ -1,4 +1,4 @@
-const { Poll } = require('../../../db');
+const { Poll } = require('../../../../db');
 const mongoose = require('mongoose');
 
 export default async function handler(req, res) {
