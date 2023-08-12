@@ -11,7 +11,7 @@ export default async function Page(req) {
     const user = await fetchUser(cookies().get('token')?.value) ?? null;
 
     if (!user)
-        redirect('/api/auth');
+        redirect('/api/auth?redirect=' + encodeURIComponent(`/poll/${id}/vote`));
 
 
     const res = await fetch(`${process.env.BASE_URL}/api/poll/${id}`, {

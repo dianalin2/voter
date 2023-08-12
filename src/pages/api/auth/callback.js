@@ -11,6 +11,8 @@ export default async function handler(req, res) {
     }
 
     try {
+        const state = JSON.parse(req.query.state);
+
         const accessToken = await authClient.getToken(tokenParams);
 
         const discordUser = await (await fetch('https://discord.com/api/users/@me', {
@@ -35,7 +37,7 @@ export default async function handler(req, res) {
             await dbUser.generateSessionToken();
 
         res.setHeader('Set-Cookie', `token=${dbUser.session.token}; Path=/; HttpOnly`);
-        res.redirect('/');
+        res.redirect(state?.redirect ?? '/');
     } catch (error) {
         console.log('Access Token Error', error.message);
     }
