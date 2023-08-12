@@ -23,6 +23,6 @@ export default async function Page(req) {
     const { poll } = await res.json();
 
     return (
-        <Form poll={poll} token={cookies().get('token')?.value} />
+        <Form poll={poll} token={cookies().get('token')?.value} baseUrl={process.env.BASE_URL} />
     );
 }

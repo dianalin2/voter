@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from './page.module.css';
 
 export default function Form(props) {
-    const { poll, token } = props;
+    const { poll, token, baseUrl } = props;
 
     const originalResponses = {}
 
@@ -83,7 +83,7 @@ export default function Form(props) {
     const submitForm = async (e) => {
         e.preventDefault();
 
-        const res = await fetch(`/api/poll/${poll._id}/vote`, {
+        const res = await fetch(`${baseUrl}/api/poll/${poll._id}/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -32,7 +32,6 @@ a {
   position: fixed;
   width: 100vw;
   height: 45pt;
-  z-index: -1;
 }
 
 .NavLink {
