@@ -70,6 +70,7 @@ export default function Form(props) {
                         })
                     }
                 </div>
+                {poll.canUpdateVote ? <span><em>You may update your vote at a later time.</em></span> : null}
             </div>
         );
     });
@@ -101,7 +102,6 @@ export default function Form(props) {
     return (
         <form className="VertCenter MainWidth" onSubmit={submitForm}>
             <h1 className={styles.PollTitle}>{poll.title}</h1>
-            {poll.canUpdateVote ? <p>You may update your vote at a later time.</p> : null}
             <div className={styles.Questions}>
                 {questionDivs}
             </div>

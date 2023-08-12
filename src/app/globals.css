@@ -32,6 +32,7 @@ a {
   position: fixed;
   width: 100vw;
   height: 45pt;
+  z-index: -1;
 }
 
 .NavLink {
@@ -43,7 +44,7 @@ main {
   flex-direction: column;
   align-items: center;
   height: calc(100vh);
-  padding: 45pt;
+  padding: 15pt;
 }
 
 .VertCenter {
@@ -52,6 +53,6 @@ main {
 }
 
 .MainWidth {
-  width: 100vw;
+  width: 100%;
   max-width: 500px;
 }
