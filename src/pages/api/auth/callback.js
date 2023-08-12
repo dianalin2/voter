@@ -1,10 +1,12 @@
 const { authClient, SCOPE } = require('../../../auth-config');
 const { User } = require('../../../db');
 
+require('dotenv').config();
+
 export default async function handler(req, res) {
     const tokenParams = {
         code: req.query.code,
-        redirect_uri: 'http://localhost:3000/api/auth/callback',
+        redirect_uri: `${process.env.BASE_URL}/api/auth/callback`,
         scope: SCOPE
     }
 

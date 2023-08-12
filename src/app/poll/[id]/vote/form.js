@@ -82,7 +82,7 @@ export default function Form(props) {
     const submitForm = async (e) => {
         e.preventDefault();
 
-        const res = await fetch(`http://localhost:3000/api/poll/${poll._id}/vote`, {
+        const res = await fetch(`/api/poll/${poll._id}/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

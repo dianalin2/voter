@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 async function fetchUser(token) {
-    const fetchRes = await fetch('http://localhost:3000/api/user', {
+    const fetchRes = await fetch(`${process.env.BASE_URL}/api/user`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
